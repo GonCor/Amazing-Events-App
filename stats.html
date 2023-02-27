@@ -5,14 +5,16 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- CSS de Bootstrap 5 -->
+  <!-- CSS de Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 
   <!-- Iconos de FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
-  <!-- Scripts de Bootstrap 5 -->
+  <!-- Scripts de Bootstrap  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
 
 
   <link rel="stylesheet" href="style.css" />
@@ -21,79 +23,81 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <div class="logo">
-        <a class="navbar-brand" href="#"> <img src="assets/Logo Amazing Events.png" alt></a>
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="upcoming.html">Upcoming Events</a>
-          <a class="nav-link" href="details.html">Past Event</a>
-          <a class="nav-link" href="contact.html">Contact</a>
-          <a class="nav-link" href="stats.html">Stats</a>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="logo">
+        <a class="navbar-brand" href="index.html"> <img src="assets/Logo.png" alt></a>
         </div>
-      </div>
-    </div>
-  </nav>
-  <div class="seccion">
-    <div class="division division-izquierda">
-      <a href="#" class="flecha">
-        <</a>
-    </div>
-    <div class="division division-centro">
-      <a href="details.html" class="titulo">Stats</a>
-    </div>
-    <div class="division division-derecha">
-      <a href="#" class="flecha">></a>
-    </div>
-  </div>
-
-
-  <div class="seccion-card">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="categoria1" value="categoria1">
-          <label class="form-check-label" for="categoria1">Categoria 1</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="categoria2" value="categoria2">
-          <label class="form-check-label" for="categoria2">Categoria 2</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="categoria3" value="categoria3">
-          <label class="form-check-label" for="categoria3">Categoria 3</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="categoria4" value="categoria4">
-          <label class="form-check-label" for="categoria4">Categoria 4</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="categoria5" value="categoria5">
-          <label class="form-check-label" for="categoria5">Categoria 5</label>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <form class="form-inline">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="upcoming.html">Upcoming Events</a>
+            <a class="nav-link" href="past_event.html">Past Event</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="details.html">Details</a>
+            <a class="nav-link" href="stats.html">Stats</a>
           </div>
-        </form>
+        </div>
+      </div>
+    </nav>
+    <div class="seccion">
+      <div class="division division-izquierda">
+        <a href="details.html" class="flecha"> <
+          </a>
+      </div>
+      <div class="division division-centro">
+        <a href="stats.html" class="titulo">Stats</a>
+      </div>
+      <div class="division division-derecha">
+        <a href="index.html" class="flecha">></a>
       </div>
     </div>
-  </div>
+    
+    <div class="seccion-card">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="category1" value=category1">
+            <label class="form-check-label" for="category1">Concert </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="category2" value="categoria2">
+            <label class="form-check-label" for="category2">Cultural</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="category3" value=category3">
+            <label class="form-check-label" for="category3">Entertainment</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="category4" value="category4">
+            <label class="form-check-label" for="category4">Food</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="category5" value="category5">
+            <label class="form-check-label" for="category5">Sport</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form class="form-inline">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
+  </header>
 
 
   <main>
