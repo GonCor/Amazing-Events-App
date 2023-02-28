@@ -1,30 +1,30 @@
 /* Traer del DOM los datos que necesito  */
 
-const pastCard = document.querySelector('#oldCard');
+const pastCard = document.querySelector('#upcomingEvents');
 
 /* Aplico la funcion */
 
-let oldCard = createPastEventCards(data.events, data.currentDate);
+let futureCard = createPastEventCards(data.events, data.currentDate);
 
 /* Mostrar las Tarjetas utilizo la const*/
 
-pastCard.innerHTML = oldCard;
+pastCard.innerHTML = futureCard;
 
 function createPastEventCards(array, currentDate) {
-  const pastEvents = [];
-  const currentDateM=new Date(currentDate)
+  const futureEvents = [];
+  const currentDateM= new Date(currentDate);
 
   for (let i = 0; i < array.length; i++) {
     const eventDate = new Date(array[i].date);
-    if (eventDate < currentDateM) {
-      pastEvents.push(array[i]);
+    if (eventDate > currentDateM) {
+      futureEvents.push(array[i]);
     }
   }
 
   let cards = '';
   let count = 0; // contador para saber cuántas tarjetas se han generado
     
-  for (const event of pastEvents) {
+  for (const event of futureEvents) {
     if (count % 3 === 0) { // si el contador es divisible por 3, crear una nueva fila
       cards += '<div class="row">';
     }
