@@ -5,7 +5,7 @@ eventsCard.innerHTML = newCard;
 
 function createCard(array) {
     let cards = '';
-    let count = 0; // contador para saber cuántas tarjetas se han generado
+    let count = 0; // contador tarjetas 
     for (const event of array) {
       if (count % 3 === 0) { // si el contador es divisible por 3, crear una nueva fila
         cards += '<div class="row">';
