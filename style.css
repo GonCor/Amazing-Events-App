@@ -9,6 +9,8 @@ header {
 main {
   position: relative;
   min-height: calc( 100vh - 250px); /* Resto la altura del header y del footer */
+  margin-top: 100px; /* ajustar el valor según el tamaño del header */
+  
 }
 
 footer {
@@ -94,9 +96,7 @@ footer {
   width: 30%;
 }
 
-.seccion-card {
-  padding: 20px;
-}
+
 
 .card img {
   object-fit: fill;
@@ -113,5 +113,33 @@ footer {
   margin: 10px;
 }
 
+.container-checkbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cada columna mide al menos 150px y se ajusta automáticamente al tamaño disponible */
+  grid-gap: 1rem; /* Espacio entre cada columna */
+  justify-items: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin: 1rem 0;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+
+.container-footer{
+  padding: 10px;
+}
 
 

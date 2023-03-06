@@ -1,7 +1,8 @@
-const eventsCard= document.querySelector('#newCards');
+const eventsCards= document.querySelector('#newCards');
+
 let newCard= createCard(data.events);
 
-eventsCard.innerHTML = newCard;
+eventsCards.innerHTML = newCard;
 
 function createCard(array) {
     let cards = '';
@@ -35,25 +36,4 @@ function createCard(array) {
   }
   
 
-/* function createCard(array) {
-    let cards ='';
-    for (const event of array) {
-        cards += `
-            <div class="col-md-4">
-                 <div class="card">
-                    <img src="${event.image}" class="card-img-top" alt="${event.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${event.name}</h5>
-                        <p class="card-text">${event.category}</p>
-                        <p class="card-text">$${event.price}</p>
-                        <a href="details.html" class="btn btn-primary">See More</a>
-                    </div>
-                </div>
-            </div>
-  `;
-    }
-    return cards;
-}
-
- */
 
