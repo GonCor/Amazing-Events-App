@@ -71,108 +71,63 @@
           <a href="past_event.html" class="flecha">></a>
         </div>
       </div>
+<!-- Espacio del CheckBox y del Buscador -->
+<div class="container-checkbox">
+  <div class="categories">
+    <!-- Aquí se generan dinámicamente los checkbox con JavaScript -->
+    <div class="containerCheckbox">
+      <div id="categories"></div>
+      <script src="checkbox.js"></script>
+    </div>
+  </div>
 
-      <div class="seccion-card">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="category1"
-                value="category1"
-              />
-              <label class="form-check-label" for="category1">Concert </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="category2"
-                value="category2"
-              />
-              <label class="form-check-label" for="category2">Cultural</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="category3"
-                value="category3"
-              />
-              <label class="form-check-label" for="category3"
-                >Entertainment</label
-              >
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="category4"
-                value="category4"
-              />
-              <label class="form-check-label" for="category4">Food</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="category5"
-                value="category5"
-              />
-              <label class="form-check-label" for="category5">Sport</label>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <form class="form-inline">
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="search"
-                  aria-label="Search"
-                />
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </header>
+  <!-- Espacio para el buscador -->
+  <form class="search-form">
+    <input type="text" class="form-control" placeholder="Search" />
+    <button type="submit" class="btn btn-primary">
+      <i class="fas fa-search"></i>
+    </button>
+    
+  </form>
+</div>
+<!-- Finaliza Espacio del CheckBox y del Buscador -->
+</header>
 
-    <main>
-      <div id="upcomingEvents"></div>
-      <script src="upcoming.js"></script>
-    </main>
+<main>
+  <div id="noResultsMessage">Not events found. Please try modifying the filters</div>
+  <div id="upcomingEvents"></div>
+  <script src="upcoming.js"></script>
+</main>
+<footer class="bg-dark text-light">
 
-    <footer class="bg-dark text-light">
-      <div class="container-footer">
-        <div class="col-12 col-md-6">
-          <ul class="list-inline text-center text-md-end mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/" class="text-light"
-                ><i class="fab fa-facebook fa-2x"></i
-              ></a>
-            </li>
-            <li class="list-inline-item">
-              <a
-                href="https://api.whatsapp.com/send?phone=5491123456789"
-                class="text-light"
-                ><i class="fab fa-whatsapp fa-2x"></i
-              ></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.instagram.com/" class="text-light"
-                ><i class="fab fa-instagram fa-2x"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </body>
+<div class="container-footer">
+  <div class="col-12 col-md-6">
+    <ul class="list-inline text-center text-md-end mb-0">
+      <li class="list-inline-item">
+        <a href="https://www.facebook.com/" class="text-light"
+          ><i class="fab fa-facebook fa-2x"></i
+        ></a>
+      </li>
+      <li class="list-inline-item">
+        <a
+          href="https://api.whatsapp.com/send?phone=5491123456789"
+          class="text-light"
+          ><i class="fab fa-whatsapp fa-2x"></i
+        ></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.instagram.com/" class="text-light"
+          ><i class="fab fa-instagram fa-2x"></i
+        ></a>
+      </li>
+    </ul>
+  </div>
+</div>
+</footer>
+</body>
 </html>
+
+
+   
+    
+  

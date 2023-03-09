@@ -1,31 +1,85 @@
-/* Traer del DOM los datos que necesito  */
+const eventsCards = document.querySelector('#upcomingEvents');
+ // Variab le global con todos los eventos
+ const allEvents = data.events; 
+ //Obtener la fecha actual y la fecha límite para filtrar los eventos antiguos
+ const currentDate = new Date(data.currentDate);
 
-const pastCard = document.querySelector('#upcomingEvents');
+ const upcomingEvents = allEvents.filter(event => new Date(event.date) > currentDate);
 
-/* Aplico la funcion */
+ 
+ const cardsContainer = document.querySelector('#upcomingEvents');
+ 
+ cardsContainer.innerHTML = createCardsContainer(upcomingEvents);
 
-let futureCard = createPastEventCards(data.events, data.currentDate);
 
-/* Mostrar las Tarjetas utilizo la const*/
 
-pastCard.innerHTML = futureCard;
+// Obtener el formulario de búsqueda
+const searchForm = document.querySelector('.search-form');
 
-function createPastEventCards(array, currentDate) {
-  const futureEvents = [];
-  const currentDateM= new Date(currentDate);
 
-  for (let i = 0; i < array.length; i++) {
-    const eventDate = new Date(array[i].date);
-    if (eventDate > currentDateM) {
-      futureEvents.push(array[i]);
-    }
+// Escuchar el evento "submit" del formulario
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Evitar que el formulario se envíe
+  
+  // Obtener el valor del campo de búsqueda
+  const searchValue = searchForm.querySelector('input').value;
+  console.log(searchValue); // Mostrar el valor del campo de búsqueda en la consola
+ 
+  // Obtener la lista de categorías seleccionadas
+  const checkboxes = Array.from(document.querySelectorAll('.category-checkbox input[type="checkbox"]'));
+  const selectedCategories = checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
+  
+  // Actualizar las cartas mostradas en función de los valores de búsqueda y categoría
+  updateCards(selectedCategories, searchValue);
+});
+
+
+// Función que actualiza el contenido de la sección de eventos
+function updateCards(selectedCategories, searchValue = '') {
+  const filteredEvents = allEvents.filter((event) => {
+    return selectedCategories.some((category) => {
+      if (typeof category === 'string') {
+        return category.trim().toLowerCase() === event.category.trim().toLowerCase();
+      }
+      return false;
+    }) && (event.name.toLowerCase().includes(searchValue.toLowerCase()) || event.description.toLowerCase().includes(searchValue.toLowerCase()));
+  });
+
+  // Obtener el elemento de las tarjetas y el elemento del mensaje
+  const cardsContainer = document.querySelector('#upcomingEvents');
+  const messageContainer = document.querySelector('#noResultsMessage');
+
+  // Si el resultado filtrado es un arreglo vacío, mostrar el mensaje y ocultar las tarjetas
+  if (filteredEvents.length === 0) {
+    cardsContainer.style.display = 'none';
+    messageContainer.style.display = 'block';
+  } else { // De lo contrario, mostrar las tarjetas y ocultar el mensaje
+    messageContainer.style.display = 'none';
+    cardsContainer.style.display = 'block';
+    cardsContainer.innerHTML = createCardsContainer(filteredEvents);
   }
+}
+  
+  // Escucho el checkbox
+  const checkboxes = document.querySelectorAll('input[type=checkbox]');
+  checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('change', () => {
+    const selectedCategories = Array.from(checkboxes).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
+    console.log(selectedCategories);
+    if (selectedCategories.length > 0) {
+      updateCards(selectedCategories);
+    } else {
+      eventsCards.innerHTML = createCardsContainer(allEvents);
+    }
+  });
+});
+  
 
+function createCardsContainer(array) {
   let cards = '';
-  let count = 0; // contador para saber cuántas tarjetas se han generado
-    
-  for (const event of futureEvents) {
-    if (count % 3 === 0) { // si el contador es divisible por 3, crear una nueva fila
+  let count = 0;
+  for (const event of array) {
+    if (count % 3 === 0) {
       cards += '<div class="row">';
     }
     cards += `
@@ -42,16 +96,13 @@ function createPastEventCards(array, currentDate) {
       </div>
     `;
     count++;
-    if (count % 3 === 0) { // si el contador es divisible por 3, cerrar la fila
+    if (count % 3 === 0) {// si el contador es divisible por 3, cerrar la fila
       cards += '</div>';
     }
   }
-  if (count % 3 !== 0) { // si el número total de tarjetas no es divisible por 3, cerrar la última fila
+  if (count % 3 !== 0) {
     cards += '</div>';
   }
-
   return cards;
 }
 
-  
- 
