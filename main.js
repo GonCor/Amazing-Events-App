@@ -5,24 +5,58 @@ const allEvents = data.events; // Variable global con todos los eventos
 eventsCards.innerHTML = createCardsContainer(allEvents);
 
 
+// Obtener el formulario de búsqueda
+const searchForm = document.querySelector('.search-form');
+
+
+// Escuchar el evento "submit" del formulario
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Evitar que el formulario se envíe
+  
+  // Obtener el valor del campo de búsqueda
+  const searchValue = searchForm.querySelector('input').value;
+  console.log(searchValue); // Mostrar el valor del campo de búsqueda en la consola
+ 
+  // Obtener la lista de categorías seleccionadas
+  const checkboxes = Array.from(document.querySelectorAll('.category-checkbox input[type="checkbox"]'));
+  const selectedCategories = checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
+  
+  // Actualizar las cartas mostradas en función de los valores de búsqueda y categoría
+  updateCards(selectedCategories, searchValue);
+});
+
+
+
 
 // Función que actualiza el contenido de la sección de eventos
-function updateCards(selectedCategories) {
+function updateCards(selectedCategories, searchValue = '') {
   const filteredEvents = allEvents.filter((event) => {
     return selectedCategories.some((category) => {
       if (typeof category === 'string') {
         return category.trim().toLowerCase() === event.category.trim().toLowerCase();
       }
       return false;
-    });
+    }) && (event.name.toLowerCase().includes(searchValue.toLowerCase()) || event.description.toLowerCase().includes(searchValue.toLowerCase()));
   });
-  console.log(filteredEvents); // Verifica los eventos filtrados
-  eventsCards.innerHTML = createCardsContainer(filteredEvents);
+
+  // Obtener el elemento de las tarjetas y el elemento del mensaje
+  const cardsContainer = document.querySelector('#newCards');
+  const messageContainer = document.querySelector('#noResultsMessage');
+
+  // Si el resultado filtrado es un arreglo vacío, mostrar el mensaje y ocultar las tarjetas
+  if (filteredEvents.length === 0) {
+    cardsContainer.style.display = 'none';
+    messageContainer.style.display = 'block';
+  } else { // De lo contrario, mostrar las tarjetas y ocultar el mensaje
+    messageContainer.style.display = 'none';
+    cardsContainer.style.display = 'block';
+    cardsContainer.innerHTML = createCardsContainer(filteredEvents);
+  }
 }
+  
+
 
   // Escucho el checkbox
- 
-
   const checkboxes = document.querySelectorAll('input[type=checkbox]');
   checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('change', () => {
@@ -36,12 +70,6 @@ function updateCards(selectedCategories) {
   });
 });
   
-
-/* // Llama a la función updateCards al cargar la página con todas las categorías seleccionadas
-document.addEventListener('DOMContentLoaded', function() {
-  updateCards(allEvents);
-}); */
-
 
 function createCardsContainer(array) {
   let cards = '';

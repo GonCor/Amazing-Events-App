@@ -83,9 +83,8 @@
         <!-- Espacio para el buscador -->
         <form class="search-form">
           <input type="text" class="form-control" placeholder="Search" />
-          <button onclick="mensaje()" type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-primary">
             <i class="fas fa-search"></i>
-            
           </button>
           
         </form>
@@ -94,6 +93,7 @@
     </header>
 
     <main>
+      <div id="noResultsMessage" style="display:none;">Not events found. Please try modifying the filters</div>
       <div id="newCards"></div>
 
       <script src="main.js"></script>
