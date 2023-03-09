@@ -32,8 +32,8 @@ function categoriesCheckbox(array) {
       const checkboxHtml = `
       
       <div class="col-md-3 col-sm-3">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox${i+1}" value="${categoria}">
+        <div class="category-checkbox">
+          <input class="form-check-input" type="checkbox" id="checkbox${i+1}" value="${categoria}">
           <label class="form-check-label" for="inlineCheckbox${i+1}">${categoria}</label>
         </div>
       </div>
