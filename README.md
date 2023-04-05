@@ -1,13 +1,14 @@
-Welcome to Amazing Events App
-This is an exciting project for the development of an app for Amazing Events. The project will involve developing the app from scratch, and we are excited to have you on board as part of the development team.
 
-To ensure that we can fully utilize your skills and abilities, we kindly request that you complete some JavaScript exercises and send them to us for review. This will help us assess your proficiency in the language and determine the best way to utilize your skills for the project.
+The website has several pages:
 
-We are still working with Amazing Events to clarify the project goals, and we will provide you with more details as soon as possible. In the meantime, we encourage you to brush up on your JavaScript skills and prepare to amaze us all with your coding prowess!
+Home: displays all events in a summarized form, both past (colored with a gray filter) and upcoming. Events are shown with information such as category, image, date, description, price, and location. There are also filters by category and a search field that can be used to find specific events.
+Upcoming events: shows the events that are yet to happen, with the same filters and search field as found on the home page.
+Past events: similar to the upcoming events page, but only for past events.
+Contact: a form for contacting and sending messages.
+Stats: displays a table with statistics from past events, such as maximum and minimum attendance and the event with the highest capacity. There are also revenue statistics and percentage attendance grouped by category for both past and upcoming events.
+Details: this page shows more detailed information about the event, in addition to the aforementioned data. It includes an estimate of event attendance and capacity.
+External API
+All event data is obtained from an external API and loaded onto the page through a "fetch" request.
 
-Thank you for joining us on this exciting project.
 
-Best regards,
-Paula Davis
-Team Lead
-Web Code
+The website is fully responsive 
