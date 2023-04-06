@@ -24,27 +24,9 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <div class="logo">
-        <a class="navbar-brand" href="index.html"> <img src="assets/Logo.png" alt></a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="upcoming.html">Upcoming Events</a>
-            <a class="nav-link" href="past_event.html">Past Event</a>
-            <a class="nav-link" href="contact.html">Contact</a>
-            <a class="nav-link" href="details.html">Details</a>
-            <a class="nav-link" href="stats.html">Stats</a>
-          </div>
-        </div>
+    <div class="navDiv">
+      <script src="nav.js"></script>
       </div>
-    </nav>
     <div class="seccion">
       <div class="division division-izquierda">
         <a href="details.html" class="flecha"> <
@@ -57,51 +39,8 @@
         <a href="index.html" class="flecha">></a>
       </div>
     </div>
-    
-    <div class="seccion-card">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="category1" value=category1">
-            <label class="form-check-label" for="category1">Concert </label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="category2" value="categoria2">
-            <label class="form-check-label" for="category2">Cultural</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="category3" value=category3">
-            <label class="form-check-label" for="category3">Entertainment</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="category4" value="category4">
-            <label class="form-check-label" for="category4">Food</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="category5" value="category5">
-            <label class="form-check-label" for="category5">Sport</label>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <form class="form-inline">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
   </header>
-
-
   <main>
-
     <div class="container">
       <h2>Event Statistics</h2>
       <table class="table table-bordered table-striped">
@@ -114,93 +53,29 @@
         </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="eventsCardsHighest"></td>
+            <td id="eventsCardsLowest"></td>
+            <td id="eventsCapacityList"></td>
           </tr>
         </tbody>
       </table>
     
-      <h2>Upcoming Events Statistics by Category</h2>
-      <table class="table table-bordered table-striped">
-        <thead class="table-secondary">
-          <tr>
-            <th>Categories</th>
-            <th>Revenues</th>
-            <th>Percentage of Attendance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    
-      <h2>Past Events Statistics by Category</h2>
-      <table class="table table-bordered table-striped">
-        <thead class="table-secondary">
-          <tr>
-            <th>Categories</th>
-            <th>Revenues</th>
-            <th>Percentage of Attendance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-  </main>
+        <h2>Upcoming Events Statistics by Category</h2>
+        
+        <div id="tableUpcoming"></div>
+         
 
+        <h2>Past Events Statistics by Category</h2>
+          <table class="table table-bordered table-striped">
+              <thead class="table-secondary">
+               <div id="tablePast"></div>
+            </thead>
+          </table>
 
+  
+  <script src="stats.js"></script>
+ 
+ 
   <footer class="bg-dark text-light">
     <div class="container-footer">
       <div class="col-12 col-md-6">
@@ -220,8 +95,5 @@
     </div>
     </div>
   </footer>
-
-
 </body>
-
 </html>

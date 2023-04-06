@@ -1,15 +1,13 @@
 const detailCard= document.querySelector('#details');
-
-let detailsEvents= detailsCard(data.events);
-
 detailCard.innerHTML = detailsCard(data.events);
 
 function detailsCard(array) {
     let cards = '';
     
     for (const event of array) {
+      
       cards += `
-        <div class="row">
+        <div class="row" id="${event._id}">
               <div class="col-md-6 my-5">
                 <img src="${event.image}" class="card-img-details" alt="${event.name}">
               </div>
@@ -22,7 +20,7 @@ function detailsCard(array) {
                     <strong>Category:</strong> ${event.category}<br>
                     <strong>Place:</strong> ${event.place}<br>
                     <strong>Capacity:</strong> ${event.capacity}<br>
-                    <strong>Assistance or Estimate:</strong> ${event.assistance}<br>
+                    <strong>Assistance or Estimate:</strong> ${event.assistance != null ? event.assistance : event.estimate}<br>
                     <strong>Price:</strong> $${event.price}
                   </p>
                 </div>
@@ -32,4 +30,3 @@ function detailsCard(array) {
     };
     return cards;
   }
-  
