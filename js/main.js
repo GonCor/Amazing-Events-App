@@ -1,6 +1,5 @@
   const eventsCards = document.querySelector('#newCards');
   const search = document.querySelector('.form-control');
-
   let allEvents = [];
   let selectedCategories = []; // Declarar la variable en el ámbito global y asignarle un valor vacío
 
