@@ -5,6 +5,6 @@ button.addEventListener('click', function() {
   if (main.style.marginTop !== originalMarginTop) {
     main.style.marginTop = originalMarginTop;
   } else {
-    main.style.marginTop = '500px';
+    main.style.marginTop = '300px';
   }
 });
