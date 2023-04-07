@@ -241,7 +241,6 @@ th{
   }
 
  .containerDetails{
-  margin-top: 200px;
   text-align: center;
  }
  
@@ -250,5 +249,16 @@ th{
 @media (max-width: 576px) {
   .navbar-collapse {
     margin-top: 1rem; /* ajusta el margen superior del menú desplegable */
+  }
+  main {
+ 
+    margin-top: 200px; /* ajustar el valor según el tamaño del header */
+  }
+  footer {
+    position: fixed;
+ /*    background-color: #f8f8f8;
+   ;
+    border-top: 1px solid #ccc;
+    text-align: center; */
   }
 }

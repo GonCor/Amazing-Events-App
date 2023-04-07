@@ -46,4 +46,5 @@ eventsCard.innerHTML = checkboxesHtml; // Agregar los checkboxes al HTML
     </div>
   `;
   }
+
   
