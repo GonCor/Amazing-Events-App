@@ -23,13 +23,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <title>AEVENTS</title>
-    <script src="data.js"></script>
+    <script src="js/data.js"></script>
   </head>
   <body>
     <header>
-      <div class="navDiv">
-        <script src="nav.js"></script>
-      </div>
+      <div id="nav-container">
+      <script src="js/nav.js"></script>
+    </div>
       <div class="seccion">
         <div class="division division-izquierda">
           <a href="stats.html" class="flecha"><</a>
@@ -41,14 +41,14 @@
           <a href="upcoming.html" class="flecha">></a>
         </div>
       </div>
-    
+
       <!-- Espacio del CheckBox y del Buscador -->
       <div class="container-checkbox">
         <div class="categories">
           <!-- Aquí se generan dinámicamente los checkbox con JavaScript -->
           <div class="containerCheckbox">
             <div id="categories"></div>
-            <script src="checkbox.js"></script>
+            <script src="js/checkbox.js"></script>
           </div>
         </div>
 
@@ -61,11 +61,12 @@
     </header>
 
     <main>
-      <div id="noResultsMessage">Not events found. Please try modifying the filters</div>
+      <div id="noResultsMessage">
+        Not events found. Please try modifying the filters
+      </div>
       <div id="newCards"></div>
     </main>
     <footer class="bg-dark text-light">
-      
       <div class="container-footer">
         <div class="col-12 col-md-6">
           <ul class="list-inline text-center text-md-end mb-0">
@@ -89,7 +90,8 @@
           </ul>
         </div>
       </div>
-      <script src="main.js"></script>
+      <!-- <script src="js/nav.js"></script> -->
+      <script src="js/main.js"></script>
     </footer>
   </body>
 </html>
