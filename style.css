@@ -1,8 +1,5 @@
-
-
 body {
-  min-height: 100vh;
-  
+  min-height: 100vh;  
 }
 
 header {
@@ -13,7 +10,6 @@ main {
   position: relative;
   min-height: calc( 100vh - 250px); /* Resto la altura del header y del footer */
   margin-top: 15px; /* ajustar el valor según el tamaño del header */
-  
 }
 
 footer {
@@ -55,22 +51,22 @@ footer {
   background-color: #000;
   color: #fff;
 }
-.seccion {
+ .seccion {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
   height: 50px;
   padding: 0 10%;
-}
+} 
 
-.division {
+ .division {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 10%;
-}
+} 
 
 .division-izquierda {
   justify-content: flex-start;
@@ -166,10 +162,10 @@ footer {
 }
 
 
-.navbar {
+ /* .navbar {
   display: flex;
   justify-content: flex-end;
-}
+}  */
 
 th, td ,h2 {
   text-align: center;
@@ -189,6 +185,20 @@ th{
   
  }
 
+  .navbar-brand img {
+  height: 50px; /* ajusta el tamaño de la imagen del logo */
+} 
+
+.navbar-nav {
+  margin-left: auto; /* alinea los enlaces a la derecha */
+}
+ 
+
+.navbar-toggler {
+  margin-right: 0;
+}
+
+
 @media (max-width: 767px) {
 
 
@@ -199,32 +209,31 @@ th{
     width: 100%;
   }
 
-  .navbar .nav-link {
+
+/*   .navbar .nav-link {
     width: 100%;
     text-align: center;
     margin-right: 0;
     margin-bottom: 5px;
-  }
-
-  .navbar {
+  } */
+/* 
+   .navbar {
     flex-wrap: wrap;
     justify-content: center;
-  }
+  } 
+ */
 
-
-  .navbar {
+/*   .navbar {
 
     display: block;
     padding: 10px;
 
-    }
-    .navbar a {
+    } */
+   /*  .navbar a {
     display: inline-block;
-    }
+    } */
     
-  main {
-    margin-top: 500px;
-  }
+
   .card {
     max-width: 60%;
     margin: 10px auto; 
@@ -238,3 +247,8 @@ th{
  
 } 
 
+@media (max-width: 576px) {
+  .navbar-collapse {
+    margin-top: 1rem; /* ajusta el margen superior del menú desplegable */
+  }
+}
