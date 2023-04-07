@@ -54,6 +54,18 @@
     });
   });
 
+//agregar un evento al botón, puedes usar el método addEventListener() y escuchar el evento de clic
+var originalMarginTop = main.style.marginTop;
+
+button.addEventListener('click', function() {
+  if (main.style.marginTop !== originalMarginTop) {
+    main.style.marginTop = originalMarginTop;
+  } else {
+    main.style.marginTop = '500px';
+  }
+});
+
+
   // Función que actualiza el contenido de la sección de eventos
   function updateCards(selectedCategories, searchValue = '') {
     let filteredEvents = [];
@@ -121,11 +133,3 @@
     return cards;
   }
 
-// Escucha el evento click del botón
-document.addEventListener('click', function(event) {
-  if (event.target.classList.contains('btn-details')) { 
-    const eventId = event.target.getAttribute('data-target'); // Obtiene el ID del evento del atributo "data-target"
-    const url = `details.html?#${eventId}`; // Construye la URL para redirigir al usuario a details.html con el ID del evento como parámetro
-    window.location.href = url; // Redirige al usuario a la página details.html con el ID del evento como parámetro
-  }
-});
